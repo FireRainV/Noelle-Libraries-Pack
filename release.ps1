@@ -117,7 +117,7 @@ if ((Test-Path $localToolsPath) -and (@(Get-ChildItem -Path $localToolsPath -Dir
             $toolVersionFormatted = $toolVersion -replace '\.', '_'
 
             # Combine the folder name and version with the new prefix
-            $newFolderName = "(Tool) $($toolFolder.Name)_v$toolVersionFormatted"
+            $newFolderName = "(Tool) $($toolFolder.Name)_$toolVersionFormatted"
             $toolZipName = "$newFolderName.zip"
             $toolZipPath = Join-Path $myToolsDestination $toolZipName
 
