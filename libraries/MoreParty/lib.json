@@ -1,0 +1,31 @@
+{
+    "id": "moreparty",
+
+    "authors": [
+        "FireRainV",
+        "skarph", // Help with ShortAct hook
+        "Elioze", // Scroller feature (see 'scroller' config option)
+    ],
+
+    "version": "v3.0.0",
+    "engineVer": "v0.10.0-dev",
+
+    "optionalDependencies": ["magical-glass"],
+
+    "config": {
+        // It will only show 3 party members in a row instead of 4.
+        "three_per_row": false,
+        // Whether to create a 2x2 grid when there're exactly 4 party members.
+        // Only works if 'three_per_row' is also enabled.
+        "two_by_two": true,
+
+        // Uses a scroller instead of down-scaling the head icons in the equip and power menus.
+        "scroller": true,
+
+        // When the battle action box gets smaller and a battler can both ACT and cast spells,
+        // they'll be combined into the ACT button as a menu.
+        // You can modify their name and description with these configs.
+        "custom_act_name": ["ACT", "You can\ndo many\nthings"],
+        "custom_magic_name": ["Magic", "Cast\nspells"]
+    }
+}

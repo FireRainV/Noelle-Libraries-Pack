@@ -1,0 +1,38 @@
+The next values can only be overwritten for the weapon item:
+-- explanation.
+weaponitem.value = default
+get function
+
+==================
+-- The amount of bolts a party memeber will have, can deal more damage than usual if you crit multiple times, like in UT.
+self.bolt_count = 1
+item:getBoltCount()
+
+-- The speed of the bolts.
+self.bolt_speed = 8
+item:getBoltSpeed()
+
+-- The offset of the bolts from where their original position would be. Can be negative.
+self.bolt_offset = 0
+item:getBoltOffset()
+
+-- Whether the bolt will keep accelerating, this defines the acceleration speed. Works with bolt_speed.
+-- The bolt will have a single frame where they'll stick to the target.
+self.bolt_acceleration = 0
+item:getBoltAcceleration()
+
+-- When using multiple bolts, this determines their distance between one to another.
+-- A number (ex. 80) will make all bolts be at the same distance from one another.
+-- A table (ex. {80, 40, 120}) will make each bolt be at a distance separated by this amount, starting from the second (the first one is affected by bolt_offset)
+-- In this case, it will be used for 4 or more bolts, where bolts after the 4th will use the last value, which is 120.
+-- A table inside the table (ex. {{40, 80}, 60, {40, 60}}) is the same as above, except that if the number is a table of numbers, the distance will be picked randomly from the numbers.
+-- So the second bolt would be at a distance of either 40 or 80, the third always 60, and 4th and above 40 or 60.
+self.multibolt_variance = 80
+item:getMultiboltVariance()
+
+
+-- Determines how multibolts are spawned.
+-- true = "last_bolt":  The next bolt is spawned relative to the last bolt spawned (lower values recommended)
+-- false = "first_bolt": The next bolt is spawned relative to the first bolt spawned (higher values recommended, similar to Magical-Glass, this code was done by Sam Deluxe)
+self.calculate_multibolt_from_last_bolt = true
+==================

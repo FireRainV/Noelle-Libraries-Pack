@@ -1,0 +1,15 @@
+{
+    "id": "classic_turn_based_rpg",
+
+    "authors": [
+        "FireRainV"
+    ],
+
+    "version": "v1.4.0",
+    "engineVer": "v0.10.0-dev",
+
+    "config": {
+        "classic_enemy_attack": false, // Whether enemies will use bullet patterns or attack directly by default
+        "classic_party_attack": false, // Whether the party will automatically attack when commanded to attack by default
+    }
+}

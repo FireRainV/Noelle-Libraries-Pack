@@ -1,0 +1,124 @@
+local spell, super = Class(Spell, "starshot")
+
+function spell:init()
+    super.init(self)
+
+    -- Display name
+    self.name = "StarShot"
+    -- Name displayed when cast (optional)
+    self.cast_name = "STAR SHOT"
+
+    -- Battle description
+    self.effect = "Star\nDamage"
+    -- Menu description
+    self.description = "Deals magical Star damage to\none enemy."
+    self.check = "Deals magical star damage to one enemy."
+
+    -- TP cost
+    self.cost = 32
+
+    -- Target mode (ally, party, enemy, enemies, or none)
+    self.target = "enemy"
+
+    -- Tags that apply to this spell
+    self.tags = { "damage" }
+end
+
+function spell:onCast(user, target)
+    local targetX, targetY = target:getRelativePos(target.width/2, target.height/2, Game.battle)
+    local userX, userY = user:getRelativePos(user.width, user.height/2, Game.battle)
+
+    user:setAnimation("battle/snap")
+
+    Game.battle.timer:script(function(wait)
+        wait(10 / 30)
+
+        Game.battle.starbasic = Sprite("effects/stars/star_basic", userX, userY)
+        Game.battle.starbasic:setOrigin(0.5, 0.5)
+        Game.battle.starbasic:setScale(2)
+        Game.battle.starbasic.layer = BATTLE_LAYERS["above_battlers"]
+        Game.battle:addChild(Game.battle.starbasic)
+        Game.battle.starbasic:slideToSpeed(targetX, targetY, 20, function()
+            local damage = self:getDamage(user, target)
+            target:hurt(damage, user)
+
+            Assets.playSound("celestial_hit")
+            Assets.playSound("damage")
+            target:shake(6, 0, 0.5)
+
+            Game.battle.starbasic:remove()
+
+            Game.battle:finishActionBy(user)
+        end)
+
+        Game.battle.timer:every(0.01, function()
+            local starparticle = Sprite("effects/stars/rainbow_star", Game.battle.starbasic.x + MathUtils.random(32), Game.battle.starbasic.y + MathUtils.random(32))
+            starparticle:setOrigin(0.5, 0.5)
+            starparticle:setScale(2)
+            starparticle.layer = BATTLE_LAYERS["above_battlers"]
+            Game.battle:addChild(starparticle)
+            starparticle:play(0.1, false)
+            starparticle:slideToSpeed(starparticle.x + 32, starparticle.y, 2)
+            starparticle:fadeOutAndRemove(0.5)
+        end, 50)
+
+        wait(1 / 30)
+        Assets.playSound("wish")
+        Assets.playSound("bomb")
+    end)
+
+    return false
+end
+
+function spell:onLightCast(user, target)
+    Game.battle.timer:script(function(wait)
+        local x, y = (SCREEN_WIDTH / 2), SCREEN_HEIGHT
+        local tx, ty = target:getRelativePos(target.width / 2, target.height / 2, Game.battle)
+
+        Assets.playSound("wish")
+        Assets.playSound("bomb")
+
+        Game.battle.starbasic = Sprite("effects/stars/star_basic", x, y)
+        Game.battle.starbasic:setOrigin(0.5, 0.5)
+        Game.battle.starbasic:setScale(2)
+        Game.battle.starbasic.layer = LIGHT_BATTLE_LAYERS["above_arena_border"]
+        Game.battle:addChild(Game.battle.starbasic)
+        Game.battle.starbasic:slideToSpeed(tx, ty, 20, function()
+            local damage = self:getDamage(user, target)
+            target:hurt(damage, user)
+
+            Assets.playSound("celestial_hit")
+            Assets.playSound("damage")
+            target:shake(6, 0, 0.5)
+
+            Game.battle.starbasic:remove()
+
+            Game.battle:finishActionBy(user)
+        end)
+
+        Game.battle.timer:every(0.01, function()
+            local starparticle = Sprite("effects/stars/rainbow_star", Game.battle.starbasic.x + MathUtils.random(32), Game.battle.starbasic.y + MathUtils.random(32))
+            starparticle:setOrigin(0.5, 0.5)
+            starparticle:setScale(2)
+            starparticle.layer = Game.battle.starbasic.layer - 1
+            Game.battle:addChild(starparticle)
+            starparticle:play(0.1, false)
+            starparticle:slideToSpeed(starparticle.x, starparticle.y + 32, 2)
+            starparticle:fadeOutAndRemove(0.5)
+        end, 50)
+
+        wait(1 / 30)
+    end)
+
+    return false
+end
+
+function spell:getDamage(user, target)
+    if Game:isLight() then
+        return math.ceil((user.chara:getStat("magic") * 10) + 55 + (MathUtils.random(5) * 2))
+    else
+        return math.ceil((user.chara:getStat("magic") * 20) + 100 + (MathUtils.random(10) * 2))
+    end
+end
+
+return spell

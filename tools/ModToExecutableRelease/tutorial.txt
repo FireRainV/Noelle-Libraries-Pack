@@ -1,0 +1,20 @@
+This script allows you to turn your software/game from a folder which contains your executable and dependency files into a single-file executable!
+Created by FireRainV! :3
+
+
+
+File Name - The name of your executable/game (you can still rename it, this name also applies to some metadata of your executable.)
+File Version - The version of your software/mod (can contain up to 4 part number format. [example: 14.2.1.2])
+Run as administatror - Whether your software must be executed as administatror to run (in most cases, you won't need it.)
+Author - The name of the creator/developer/team
+Icon Path - The path to your icon (must be an .ico file! [example: C:\Users\[Your User Folder Name]\Desktop\love-11.5-win64\Kristal-main\icon.ico])
+Output Folder Path - Where your new executable will be located after creation (if left empty, it will put it on your desktop.)
+Executable Folder Path - Required! The path to your game parent folder (which contains all of your software/game's files. [example: C:\Users\[Your User Folder Name]\Desktop\love-11.5-win64])
+
+Select executable number to launch - Input the index number of the executable/script you want to run when your new executable is launched.
+
+Launch Parameters - Optional. Allows you to add command-line paramters to your selected executable.
+
+
+
+And you're done!

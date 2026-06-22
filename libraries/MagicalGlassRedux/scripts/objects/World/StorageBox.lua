@@ -1,0 +1,53 @@
+local StorageBox, super = Class(Interactable)
+
+-- Dimensional Boxes overworld object
+function StorageBox:init(x, y, shape, properties)
+    super.init(self, x, y, shape, properties)
+
+    self:setScale(2)
+
+    self.sprite = Sprite("world/events/chestbox")
+    self:addChild(self.sprite)
+
+    self:setSize(self.sprite:getSize())
+    self:setHitbox(0, 5, self.sprite.width, self.sprite.height - 8)
+
+    self.inventory = properties["inventory"] or "box_a"
+
+    self.solid = true
+
+    self.cutscene = function(cutscene)
+        self.should_open_menu = false
+        local choice = cutscene:textChoicer("* Use the box?", { "Yes", "No" })
+
+        if choice == 1 then
+            if #Game.inventory:getStorage("items") == 0 and #Game.inventory:getStorage(self.inventory) == 0 then
+                local message = {
+                    "* You put a little time into\nthe box.",
+                    "* You put a little effort\ninto the box.",
+                    "* You put a little feeling\ninto the box."
+                }
+                cutscene:text("* You have no items.\n" .. TableUtils.pick(message))
+            else
+                self.should_open_menu = true
+            end
+        end
+    end
+end
+
+function StorageBox:onTextEnd()
+    if not self.world then return end
+
+    if self.should_open_menu then
+        Game.world:closeMenu()
+        Game.world:openMenu(LightStorageMenu("items", self.inventory))
+    end
+end
+
+function StorageBox:getDebugInfo()
+    local info = super.getDebugInfo(self)
+    if self.inventory then table.insert(info, "Storage: " .. self.inventory) end
+    return info
+end
+
+return StorageBox

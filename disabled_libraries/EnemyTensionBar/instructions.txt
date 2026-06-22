@@ -1,0 +1,17 @@
+How to use your enemy tension bar:
+(Given to you by Lancer Industries)
+
+Tension Bar variable: Game.battle.enemy_tension_bar
+(Uses the same functions as a normal tension bar, a.k.a: show(), hide(), getTension(), removeTension(amount), giveTension(amount, dont_clap), etc...)
+
+Encounter initial variables:
+(Can be set in the encounter inital function)
+
+self.enemy_tension_bar_on_start    |  Whether the tension bar will enter the screen when the battle starts
+
+
+
+By default, the enemy will gain TP when you graze, can be disabled in the mod.json.
+
+
+[[END COMMUNICATION]]

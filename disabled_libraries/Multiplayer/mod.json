@@ -1,0 +1,118 @@
+{
+    "name": "Multiplayer",
+    "id": "multiplayer",
+
+    "hidden": true,
+    "plugin": {},
+
+    "keybinds": [
+        {
+          "name": "P2 DOWN",
+          "id": "p2_down",
+          "keys": ["s"]
+        },
+        {
+          "name": "P2 RIGHT",
+          "id": "p2_right",
+          "keys": ["d"]
+        },
+        {
+          "name": "P2 UP",
+          "id": "p2_up",
+          "keys": ["w"]
+        },
+        {
+          "name": "P2 LEFT",
+          "id": "p2_left",
+          "keys": ["a"]
+        },
+        {
+          "name": "P2 CONFIRM",
+          "id": "p2_confirm",
+          "keys": ["e"]
+        },
+        {
+          "name": "P2 CANCEL",
+          "id": "p2_cancel",
+          "keys": ["r"]
+        },
+        {
+          "name": "P2 MENU",
+          "id": "p2_menu",
+          "keys": ["t"]
+        },
+
+        {
+          "name": "P3 DOWN",
+          "id": "p3_down",
+          "keys": ["kp5"]
+        },
+        {
+          "name": "P3 RIGHT",
+          "id": "p3_right",
+          "keys": ["kp6"]
+        },
+        {
+          "name": "P3 UP",
+          "id": "p3_up",
+          "keys": ["kp8"]
+        },
+        {
+          "name": "P3 LEFT",
+          "id": "p3_left",
+          "keys": ["kp4"]
+        },
+        {
+          "name": "P3 CONFIRM",
+          "id": "p3_confirm",
+          "keys": ["kp0"]
+        },
+        {
+          "name": "P3 CANCEL",
+          "id": "p3_cancel",
+          "keys": ["kp."]
+        },
+        {
+          "name": "P3 MENU",
+          "id": "p3_menu",
+          "keys": ["kpenter"]
+        },
+
+        // With the MoreParty Library, you can have up to 4 players
+        {
+          "name": "P4 DOWN",
+          "id": "p4_down",
+          "keys": ["h"]
+        },
+        {
+          "name": "P4 RIGHT",
+          "id": "p4_right",
+          "keys": ["j"]
+        },
+        {
+          "name": "P4 UP",
+          "id": "p4_up",
+          "keys": ["y"]
+        },
+        {
+          "name": "P4 LEFT",
+          "id": "p4_left",
+          "keys": ["g"]
+        },
+        {
+          "name": "P4 CONFIRM",
+          "id": "p4_confirm",
+          "keys": ["u"]
+        },
+        {
+          "name": "P4 CANCEL",
+          "id": "p4_cancel",
+          "keys": ["i"]
+        },
+        {
+          "name": "P4 MENU",
+          "id": "p4_menu",
+          "keys": ["o"]
+        },
+    ]
+}

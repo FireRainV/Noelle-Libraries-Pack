@@ -1,0 +1,13 @@
+{
+    "id": "bonus_characters",
+
+    "authors": [
+        "Bor", // Making the thing (Berdly and Lancer)
+        "Kiptty", // Fight, act, item, defend sprites (Berdly and Lancer)
+        "Dark Place Dev Team", // (Dess & Ceroba Spells)
+        "FireRainV" // QoL changes
+    ],
+
+    "version": "v2.0.0",
+    "engineVer": "v0.10.0-dev"
+}

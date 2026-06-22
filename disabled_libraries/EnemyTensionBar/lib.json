@@ -1,0 +1,17 @@
+{
+    "id": "enemy_tension_bar",
+
+    "authors": [
+        "Simbel",
+        "FireRainV"
+    ],
+
+    "version": "v2.0.0",
+    "engineVer": "v0.10.0-dev",
+
+    "optionalDependencies": ["magical-glass"],
+
+    "config": {
+        "grazing_tp": true, // Increase the enemy TP bar when grazing bullets
+    }
+}

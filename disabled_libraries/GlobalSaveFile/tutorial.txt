@@ -1,0 +1,46 @@
+------------ Read ------------
+GlobalSaveFile:write(key, value, save_slot)
+
+key (string):
+The name of the value to write its value to.
+
+value (any):
+The value that gets written to the name.
+
+save_slot (integer, string["global"])[optional]:
+If kept undefined, it will use the current save slot.
+If set to "global", it will write the data to a global save data.
+If set to an integer, it will write the data to that specific save slot.
+------------ Read ------------
+
+
+
+------------ Write ------------
+GlobalSaveFile:read(key, save_slot)
+
+key (string):
+The name of the value to read its value from.
+
+save_slot (integer, string["global"])[optional]:
+If kept undefined, it will use the current save slot.
+If set to "global", it will read the data from a global save data.
+If set to an integer, it will read the data from that specific save slot.
+
+return[] (any):
+The value of the name.
+------------ Write ------------
+
+
+
+------------ Clear ------------
+Clear Save:
+GlobalSaveFile:clear(save_slot)
+
+save_slot (integer, string["global"])[optional]:
+If kept undefined, it will delete the global save file.
+If set to "global", it will clear the global save data.
+If set to an integer, it will only clear that save slot data.
+
+return[] (boolean):
+Whether the clearing was successful.
+------------ Clear ------------

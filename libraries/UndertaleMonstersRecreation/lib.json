@@ -1,0 +1,14 @@
+{
+    "id": "undertale_monsters_recreation",
+
+    "authors": [
+        "Sam Deluxe", // Froggit
+        "BrendaK7200", // Moldsmal
+        "FireRainV" // QoL stuff and bug fixes
+    ],
+
+    "dependencies": ["magical-glass"],
+
+    "version": "v1.1.1",
+    "engineVer": "v0.10.0-dev",
+}

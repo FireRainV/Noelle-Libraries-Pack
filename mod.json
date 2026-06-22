@@ -1,0 +1,66 @@
+{
+    "id": "noelle-libraries-pack",
+    "name": "Noelle's Libraries Test",
+    "subtitle": "Check it out if you want to know how to use certain stuff!",
+
+    "version": "v1.0.0",
+    "engineVer": "v0.10.0-dev",
+
+    "chapter": 4,
+
+    "map": "tundra3",
+    //"map": "darktundra1",
+    //"encounter": "dummy",
+
+    //"party": ["kris"],
+    //"party": ["noelle", "susie"],
+    "party": ["noelle"],
+
+    "namesMessages": {
+        "NOELLE": "[style:GONER][spacing:3.2]The true name."
+    },
+
+    "soulColor": [1, 1, 0],
+
+    "inventory": {
+        // "items": ["undertale/rock_candy", "undertale/monster_candy", "undertale/spider_donut", "undertale/spider_cider", "undertale/butterscotch_pie", "undertale/ghost_fruit"],
+        "items": ["test/team_bun", "undertale/rock_candy"],
+        //"box_a": ["undertale/stick", "undertale/toy_knife", "undertale/tough_glove", "undertale/ballet_shoes", "undertale/torn_notebook", "undertale/burnt_pan", "undertale/empty_gun", "undertale/worn_dagger", "undertale/real_knife"],
+        //"box_b": ["undertale/bandage", "undertale/faded_ribbon", "undertale/manly_bandanna", "undertale/old_tutu", "undertale/cloudy_glasses", "undertale/stained_apron", "undertale/cowboy_hat", "undertale/heart_locket", "undertale/the_locket", "undertale/temy_armor"],
+        //"key_items": ["cell_phone"]
+    },
+
+    //"equipment": {
+    //    "noelle": {
+    //        "weapon": "mg/thorn"
+    //    },
+    //},
+
+    "config": {
+        "kristal": {
+            "lightCurrency": "Gold",
+            "lightCurrencyShort": "G",
+            "overworldSpells": true,
+            "canTossLightWeapons": true,
+            //"targetSystem": true,
+            // End of config
+        },
+        "magical-glass": {
+            //"default_battle_system": ["undertale", true],
+            //"hp_gauge_length_cap": true,
+            "undertale_menu_display": true,
+            "light_battle_tp": true,
+            "mercy_messages": true,
+            "tired_messages": true,
+            "awake_messages": true,
+            "mercy_bar": true,
+            "enemy_bar_percentages": true,
+            "light_inventory_equipment_conversion": false,
+            "savepoint_style": "undertale",
+            "text_choicebox_sound": true,
+            "debug": true,
+        },
+    },
+
+    "dev": true
+}

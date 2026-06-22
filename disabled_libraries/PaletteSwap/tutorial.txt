@@ -1,0 +1,12 @@
+Object:paletteSwap({from, to}, ...)
+
+from = {r, g, b} [can also contain a range: from = {{r, g, b}, {r, g, b}}]
+to = {r, g, b} [can also contain a range: to = {{r, g, b}, {r, g, b}}]
+... = swap another palette
+
+
+
+Example: Object:paletteSwap({{0, 0, 0}, {1, 1, 1}}) will swap all black pixels with white
+
+
+If you want to remove the FX, run the line without any arguments.
