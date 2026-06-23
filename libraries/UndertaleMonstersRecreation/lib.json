@@ -10,5 +10,5 @@
     "dependencies": ["magical-glass"],
 
     "version": "v1.1.1",
-    "engineVer": "v0.10.0-dev",
+    "engineVer": "v0.10.0",
 }

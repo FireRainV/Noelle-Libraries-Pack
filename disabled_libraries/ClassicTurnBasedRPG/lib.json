@@ -6,7 +6,7 @@
     ],
 
     "version": "v1.4.0",
-    "engineVer": "v0.10.0-dev",
+    "engineVer": "v0.10.0",
 
     "config": {
         "classic_enemy_attack": false, // Whether enemies will use bullet patterns or attack directly by default

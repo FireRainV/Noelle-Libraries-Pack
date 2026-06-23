@@ -9,5 +9,5 @@
     "optionalDependencies": ["moreparty"],
 
     "version": "v2.4.0",
-    "engineVersion": "v0.10.0-dev",
+    "engineVer": "v0.10.0",
 }

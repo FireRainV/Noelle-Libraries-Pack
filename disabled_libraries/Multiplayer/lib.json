@@ -6,7 +6,7 @@
         "MicDrop99", // Cleanup, fixes, and improvements
     ],
     "version": "v3.2.0",
-    "engineVer": "v0.10.0-dev",
+    "engineVer": "v0.10.0",
 
     "optionalDependencies": ["magical-glass"],
 
