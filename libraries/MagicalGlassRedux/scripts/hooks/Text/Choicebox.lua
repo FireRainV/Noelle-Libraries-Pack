@@ -49,10 +49,10 @@ function Choicebox:update()
                 Game.battle.ui_move:play()
             end
         else
-            if Input.pressed("left") then self.current_choice = 1 end
-            if Input.pressed("right") then self.current_choice = 2 end
-            if Input.pressed("up") then self.current_choice = 3 end
-            if Input.pressed("down") then self.current_choice = 4 end
+            if Input.down("left") then self.current_choice = 1 end
+            if Input.down("right") then self.current_choice = 2 end
+            if Input.down("up") then self.current_choice = 3 end
+            if Input.down("down") then self.current_choice = 4 end
         end
 
         if self.current_choice > #self.choices then
@@ -94,24 +94,28 @@ function Choicebox:update()
         end
 
         Object.update(self)
-    else
-        if self.undertale then
-            for i = 4, 3, -1 do
-                table.remove(self.choices, i)
-            end
+    elseif self.undertale then
+        for i = 4, 3, -1 do
+            table.remove(self.choices, i)
         end
 
         super.update(self)
 
-        if self.undertale then
-            if Input.pressed("left") and old_choice == 1 then self.current_choice = 2 end
-            if Input.pressed("right") and old_choice == 2 then self.current_choice = 1 end
+        -- Prevent built-in choice changing
+        self.current_choice = old_choice
 
-            if self.ui_sound ~= false and self.current_choice ~= old_choice then
-                Game.battle.ui_move:stop()
-                Game.battle.ui_move:play()
-            end
+        if Input.pressed("left") then self.current_choice = 1 end
+        if Input.pressed("right") then self.current_choice = 2 end
+
+        if Input.pressed("left") and old_choice == 1 then self.current_choice = 2 end
+        if Input.pressed("right") and old_choice == 2 then self.current_choice = 1 end
+
+        if self.ui_sound ~= false and self.current_choice ~= old_choice then
+            Game.battle.ui_move:stop()
+            Game.battle.ui_move:play()
         end
+    else
+        super.update(self)
     end
 end
 
