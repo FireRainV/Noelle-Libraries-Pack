@@ -171,7 +171,7 @@ echo.
     echo.
     echo BLOCK "VarFileInfo"
     echo {
-    echo     VALUE "Translation", 0x0409, 0x04B0  
+    echo     VALUE "Translation", 0x0409, 0x04B0
     echo }
     echo }
 )>"%tmp%\version_info.rc"
